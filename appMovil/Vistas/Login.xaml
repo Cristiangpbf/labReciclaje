@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LabReciclaje.Vistas.Login"
+             BackgroundColor="White"
+             NavigationPage.HasNavigationBar="False">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackLayout x:Name="cont_form" Grid.Row="0" Padding="40" VerticalOptions="CenterAndExpand">
+            <Image Source="logolr.png" HorizontalOptions="Center" Margin="0,0,0,20" />
+            <Label Text="Inicia Sessión en tu cuenta" FontAttributes="Bold" HorizontalOptions="Center" Margin="0,0,0,20" TextColor="#8EC63F"/>
+            <Label Text="Usuario" TextColor="#8EC63F"></Label>
+            <Entry x:Name="txt_usuario" Keyboard="Email" TextColor="Black" />
+            <Label Text="Password" TextColor="#8EC63F"></Label>
+            <Entry x:Name="txt_password" IsPassword="True" TextColor="Black" />
+            <Label Text="Registrate aquí." TextColor="#8EC63F" Margin="0,10,0,20">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer x:Name="btn_registrar" Tapped="btn_registrar_Tapped"/>
+                </Label.GestureRecognizers>
+            </Label>
+            <Button x:Name="btn_loguearse" Text="Iniciar Sessíón" BackgroundColor="#8EC63F" TextColor="White" Clicked="btn_loguearse_Clicked" />
+        </StackLayout>
+
+        <AbsoluteLayout Grid.Row="0" Grid.RowSpan="1" x:Name="loadingOverlay"  HorizontalOptions="FillAndExpand" IsVisible="false" BackgroundColor="#80000000" Padding="0"  AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
+            <StackLayout VerticalOptions="Center" BackgroundColor="Transparent" AbsoluteLayout.LayoutBounds="0.55, 0.15, AutoSize, AutoSize" AbsoluteLayout.LayoutFlags="PositionProportional">
+                <ActivityIndicator IsRunning="True" Color="#8EC63F" VerticalOptions="Center"/>
+                <Label Text="Espere un momento..." Padding="0" VerticalOptions="Center" TextColor="#8EC63F"/>
+            </StackLayout>
+        </AbsoluteLayout>
+    </Grid>
+</ContentPage>

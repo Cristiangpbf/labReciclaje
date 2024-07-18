@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LabReciclaje.Vistas.Home"
+             xmlns:local="clr-namespace:LabReciclaje.Vistas"
+             BackgroundColor="White"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <Grid AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <local:TemplateHeader x:Name="header" Margin="0,0,0,10" Grid.Row="0"/>
+                <ScrollView Grid.Row="1">
+                    <StackLayout>
+                        <Label Text="Que puedes reciclar" TextColor="Green" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Medium" Margin="0,30,0,0" ></Label>
+                        <CollectionView x:Name="itemsCollectionView" SelectionMode="Single" SelectionChanged="OnSelectionChanged" Margin="0,30,0,0">
+                            <CollectionView.ItemsLayout>
+                                <GridItemsLayout Orientation="Vertical" Span="3" />
+                            </CollectionView.ItemsLayout>
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <Frame Padding="10" BackgroundColor="{Binding BackgroundColor}" BorderColor="{Binding BackgroundColor}" CornerRadius="8" Margin="5">
+                                        <Frame.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="OnFrameTapped" />
+                                        </Frame.GestureRecognizers>
+                                        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                                            <Image Source="{Binding Icon}" WidthRequest="50" HeightRequest="50" HorizontalOptions="Center"/>
+                                            <Label Text="{Binding Titulo}" VerticalOptions="End" HorizontalOptions="Center" TextColor="Black" FontSize="13"/>
+                                        </StackLayout>
+                                    </Frame>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </StackLayout>
+                </ScrollView>
+            </Grid>
+            <local:UserPopup x:Name="userPopup" 
+                 AbsoluteLayout.LayoutFlags="WidthProportional, PositionProportional" 
+                 Padding="0" 
+                 Margin="4,60,4,0" 
+                 AbsoluteLayout.LayoutBounds="0,0,1,AutoSize" 
+                 IsVisible="false" 
+                 BackgroundColor="Transparent"/>
+
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

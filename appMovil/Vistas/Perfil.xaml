@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LabReciclaje.Vistas.Perfil"
+             xmlns:local="clr-namespace:LabReciclaje.Vistas"
+             BackgroundColor="White"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <Grid AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <local:TemplateHeader x:Name="header" Margin="0,0,0,10" Grid.Row="0"/>
+                <ScrollView Grid.Row="1">
+                    <StackLayout x:Name="cont_form" Padding="40" VerticalOptions="StartAndExpand">
+                        <Label Text="Mi Cuenta" FontAttributes="Bold" HorizontalOptions="Center" Margin="0,0,0,20" TextColor="#8EC63F"/>
+                        <Label Text="Nombres" TextColor="#8EC63F"></Label>
+                        <Label x:Name="lbl_nombres" TextColor="Black"></Label>
+                        <Label Margin="0,20,0,0"  Text="Apellidos" TextColor="#8EC63F"></Label>
+                        <Label x:Name="lbl_apellidos" TextColor="Black"></Label>
+                        <Label Margin="0,20,0,0"  Text="Email" TextColor="#8EC63F"></Label>
+                        <Entry x:Name="txt_email" Keyboard="Email" TextColor="Black" />
+                        <Label Margin="0,20,0,0" Text="Nombre de Usuario" TextColor="#8EC63F"></Label>
+                        <Label x:Name="lbl_usuario" TextColor="Black"></Label>
+                        <Label Margin="0,20,0,0"  Text="Cambiar Contraseña" TextColor="#8EC63F"></Label>
+                        <Entry x:Name="txt_password" Placeholder="******" IsPassword="True" TextColor="Black" />
+                        <Button x:Name="btn_actualizar" Text="Actualizar Cuenta" BackgroundColor="#8EC63F" Margin="0,30,0,0" TextColor="White" Clicked="btn_actualizar_Clicked" />
+                    </StackLayout>
+                </ScrollView>
+            </Grid>
+            <local:UserPopup x:Name="userPopup" 
+                 AbsoluteLayout.LayoutFlags="WidthProportional, PositionProportional" 
+                 Padding="0" 
+                 Margin="4,60,4,0" 
+                 AbsoluteLayout.LayoutBounds="0,0,1,AutoSize" 
+                 IsVisible="false" 
+                 BackgroundColor="Transparent"/>
+
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>
