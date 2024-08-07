@@ -20,7 +20,6 @@ public partial class NoticiaPage : ContentPage
         {
             var noticia = await noticiaService.GetNoticiaAsync();
             cv_noticias.ItemsSource = noticia;
-
         }
         catch (Exception ex)
         {
