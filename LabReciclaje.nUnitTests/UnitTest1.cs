@@ -1,22 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using LabReciclaje.*;
 
-using Moq;
-using NUnit.Framework;
-using System.Net;
-using System.Net.Http;
-using System.Threading.Tasks;
-using LabReciclaje.Service;
-using LabReciclaje.Modelo;
-using Newtonsoft.Json;
-using System.Collections.Generic;
-
-namespace TestLabReciclaje.Service
+namespace LabReciclaje.nUnitTests
 {
-    public class NoticiaServiceTests
+    public class Tests
     {
         private Mock<HttpMessageHandler> _httpMessageHandlerMock;
         private HttpClient _httpClient;
@@ -24,7 +10,7 @@ namespace TestLabReciclaje.Service
         private Config _config;
 
         [SetUp]
-        public void SetUp()
+        public void Setup()
         {
             _httpMessageHandlerMock = new Mock<HttpMessageHandler>(MockBehavior.Strict);
             _httpClient = new HttpClient(_httpMessageHandlerMock.Object);
@@ -33,7 +19,7 @@ namespace TestLabReciclaje.Service
         }
 
         [Test]
-        public async Task GetNoticiaAsync_ReturnsNoticias_WhenApiResponseIsValid()
+        public void GetNoticiaAsync_Test()
         {
             // Arrange
             var noticias = new List<NoticiaResponse>

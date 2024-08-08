@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("TestLabReciclaje")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("LabReciclaje.nUnitTests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9ea5c803bf3efe9e226d182272adff1b929a5c1d")]
-[assembly: System.Reflection.AssemblyProductAttribute("TestLabReciclaje")]
-[assembly: System.Reflection.AssemblyTitleAttribute("TestLabReciclaje")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d5e546ec2e73e797397df7636f7e267b74b8f42e")]
+[assembly: System.Reflection.AssemblyProductAttribute("LabReciclaje.nUnitTests")]
+[assembly: System.Reflection.AssemblyTitleAttribute("LabReciclaje.nUnitTests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Generado por la clase WriteCodeFragment de MSBuild.
